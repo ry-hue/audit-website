@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BSPSY 1-1 Monthly Audit Report</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #C8A2C8; /* lavender background */
+        }
+
+        .container {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .audit-report {
+            background-color: #86608E; /* dark purple background */
+            padding: 40px;
+            border-radius: 10px;
+            text-align: center;
+            color: white;
+            width: 100%;
+            max-width: 900px;
+            border: 2px solid #9B66C1; /* lavender border */
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        h3 {
+            font-size: 1.1rem;
+            font-weight: normal;
+            margin-bottom: 30px;
+            color: #D6C5E3; /* muted white */
+        }
+
+        .months-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .month-button {
+            width: 45%; /* Takes half the width of the container */
+            margin: 10px;
+            padding: 20px 0;
+            background-color: transparent;
+            border: 2px solid white;
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .month-button:hover {
+            background-color: white;
+            color: #6A478D;
+        }
+
+        .footer {
+            margin-top: 40px;
+            font-size: 0.8rem;
+            color: #D6C5E3;
+        }
+
+        /* Media Query for Mobile Devices */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8rem; /* Smaller font for mobile */
+            }
+
+            h3 {
+                font-size: 1rem; /* Adjust subtitle font */
+            }
+
+            .months-container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .month-button {
+                width: 80%; /* Full-width buttons on mobile */
+                font-size: 1rem; /* Slightly smaller font size */
+            }
+
+            .footer {
+                font-size: 0.7rem; /* Smaller footer text */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="audit-report">
+            <h1>BSPSY 1-1 Monthly Audit Report</h1>
+            <h3>Stay updated with the latest audit reports from our block!</h3>
+
+            <div class="months-container">
+                <button class="month-button" onclick="openPDF('October')">October</button>
+                <button class="month-button" onclick="openPDF('March')">March</button>
+                <button class="month-button" onclick="openPDF('November')">November</button>
+                <button class="month-button" onclick="openPDF('April')">April</button>
+                <button class="month-button" onclick="openPDF('December')">December</button>
+                <button class="month-button" onclick="openPDF('May')">May</button>
+                <button class="month-button" onclick="openPDF('January')">January</button>
+                <button class="month-button" onclick="openPDF('June')">June</button>
+                <button class="month-button" onclick="openPDF('February')">February</button>
+                <button class="month-button" onclick="openPDF('July')">July</button>
+            </div>
+
+            <div class="footer">
+                © 2024 BSPSY 1-1 | Monthly Audit Reports
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript function to handle opening PDFs when a month button is clicked
+        function openPDF(month) {
+            // Define a mapping of month to PDF file paths
+            const pdfFiles = {
+                'October': 'pdfs/October_Report.pdf',
+                'November': 'pdfs/November_Report.pdf',
+                'December': 'pdfs/December_Report.pdf',
+                'January': 'pdfs/January_Report.pdf',
+                'February': 'pdfs/February_Report.pdf',
+                'March': 'pdfs/March_Report.pdf',
+                'April': 'pdfs/April_Report.pdf',
+                'May': 'pdfs/May_Report.pdf',
+                'June': 'pdfs/June_Report.pdf',
+                'July': 'pdfs/July_Report.pdf'
+            };
+
+            // Retrieve the corresponding PDF file
+            const pdfPath = pdfFiles[month];
+
+            if (pdfPath) {
+                // Open the PDF in a new browser tab
+                window.open(pdfPath, '_blank');
+            } else {
+                alert("PDF not available for this month!");
+            }
+        }
+    </script>
+
+</body>
+</html>
