@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BSPSY 1-1 Monthly Audit Report</title>
+    <title>BSPY 1-1 Monthly Audit Report</title>
     <style>
         body {
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
-            background-color: #C8A2C8; /* lavender background */
+            background-color: #C985D6; /* lavender background */
         }
 
         .container {
@@ -23,7 +23,7 @@
         }
 
         .audit-report {
-            background-color: #86608E; /* dark purple background */
+            background-color: #6A478D; /* dark purple background */
             padding: 40px;
             border-radius: 10px;
             text-align: center;
@@ -51,9 +51,15 @@
             flex-wrap: wrap;
         }
 
+        .left-column,
+        .right-column {
+            display: flex;
+            flex-direction: column;
+            width: 45%; /* Half width for each column */
+        }
+
         .month-button {
-            width: 45%; /* Takes half the width of the container */
-            margin: 10px;
+            margin: 10px 0;
             padding: 20px 0;
             background-color: transparent;
             border: 2px solid white;
@@ -91,8 +97,13 @@
                 align-items: center;
             }
 
+            .left-column,
+            .right-column {
+                width: 100%; /* Full width for each column on mobile */
+            }
+
             .month-button {
-                width: 80%; /* Full-width buttons on mobile */
+                width: 80%; /* Larger buttons on mobile */
                 font-size: 1rem; /* Slightly smaller font size */
             }
 
@@ -106,24 +117,28 @@
 
     <div class="container">
         <div class="audit-report">
-            <h1>BSPSY 1-1 Monthly Audit Report</h1>
+            <h1>BSPY 1-1 Monthly Audit Report</h1>
             <h3>Stay updated with the latest audit reports from our block!</h3>
 
             <div class="months-container">
-                <button class="month-button" onclick="openPDF('October')">October</button>
-                <button class="month-button" onclick="openPDF('March')">March</button>
-                <button class="month-button" onclick="openPDF('November')">November</button>
-                <button class="month-button" onclick="openPDF('April')">April</button>
-                <button class="month-button" onclick="openPDF('December')">December</button>
-                <button class="month-button" onclick="openPDF('May')">May</button>
-                <button class="month-button" onclick="openPDF('January')">January</button>
-                <button class="month-button" onclick="openPDF('June')">June</button>
-                <button class="month-button" onclick="openPDF('February')">February</button>
-                <button class="month-button" onclick="openPDF('July')">July</button>
+                <div class="left-column">
+                    <button class="month-button" onclick="openPDF('October')">October</button>
+                    <button class="month-button" onclick="openPDF('November')">November</button>
+                    <button class="month-button" onclick="openPDF('December')">December</button>
+                    <button class="month-button" onclick="openPDF('January')">January</button>
+                    <button class="month-button" onclick="openPDF('February')">February</button>
+                </div>
+                <div class="right-column">
+                    <button class="month-button" onclick="openPDF('March')">March</button>
+                    <button class="month-button" onclick="openPDF('April')">April</button>
+                    <button class="month-button" onclick="openPDF('May')">May</button>
+                    <button class="month-button" onclick="openPDF('June')">June</button>
+                    <button class="month-button" onclick="openPDF('July')">July</button>
+                </div>
             </div>
 
             <div class="footer">
-                © 2024 BSPSY 1-1 | Monthly Audit Reports
+                © 2024 BSPY 1-1 | Monthly Audit Reports
             </div>
         </div>
     </div>
